@@ -117,3 +117,20 @@ document.addEventListener("DOMContentLoaded", () => {
           })
         }
       }
+
+      // Exibir seção de respostas corretas
+      if (correctAnswersSection) {
+        correctAnswersSection.style.display = "block"
+
+        // Scroll suave até a seção de respostas
+        setTimeout(() => {
+          correctAnswersSection.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          })
+        }, 300)
+      }
+    })
+  } else {
+    console.error("Botão verificar não encontrado!")
+  }
