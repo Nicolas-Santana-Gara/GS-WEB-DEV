@@ -461,3 +461,154 @@ body.theme-purple select:focus,
 body.theme-purple textarea:focus {
   border-color: #8e44ad;
 }
+
+
+/* ===== SEÇÃO DE RESPOSTAS CORRETAS ===== */
+.correct-answers-section {
+  background: #f8f9fa;
+  border: 2px solid #4a90e2;
+  border-radius: 12px;
+  padding: 25px;
+  margin-top: 30px;
+  animation: slideDown 0.5s ease-in-out;
+}
+
+.correct-answers-section h3 {
+  color: #4a90e2;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.answers-list {
+  display: grid;
+  gap: 15px;
+}
+
+.answer-item {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  border-left: 4px solid #28a745;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.answer-item strong {
+  color: #333;
+  display: block;
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+.correct-answer {
+  color: #28a745;
+  font-weight: bold;
+  margin: 0;
+  font-size: 16px;
+  padding: 8px 12px;
+  background: #d4edda;
+  border-radius: 6px;
+  border: 1px solid #c3e6cb;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-menu {
+    position: fixed;
+    left: -100%;
+    top: 70px;
+    flex-direction: column;
+    background-color: #4a90e2;
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+    padding: 20px 0;
+    gap: 0;
+  }
+
+  .nav-menu.active {
+    left: 0;
+  }
+
+  .nav-menu li {
+    margin: 10px 0;
+  }
+
+  .theme-icons {
+    margin-left: 10px;
+  }
+
+  .theme-btn {
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  .container {
+    padding: 0 15px;
+  }
+
+  section {
+    padding: 30px 0;
+  }
+
+  .item {
+    padding: 15px;
+  }
+
+  header h1 {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .slide img {
+    height: 250px;
+  }
+
+  .slide-btn {
+    padding: 10px 15px;
+    font-size: 16px;
+  }
+
+  #quizContainer {
+    padding: 20px;
+  }
+
+  #questionText {
+    font-size: 16px;
+  }
+
+  .answer-option {
+    padding: 12px;
+    font-size: 14px;
+  }
+}
+
+/* ===== SEÇÕES ESPECIAIS ===== */
+#problema {
+  background-color: #fff3cd;
+}
+
+#beneficios {
+  background-color: #d1ecf1;
+}
