@@ -197,3 +197,73 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     })
   }
+
+  // ===== PERSONALIZAÇÃO DE TEMAS =====
+  const theme1 = document.getElementById("theme1")
+  const theme2 = document.getElementById("theme2")
+  const theme3 = document.getElementById("theme3")
+
+  if (theme1) {
+    theme1.addEventListener("click", () => {
+      document.body.className = ""
+    })
+  }
+
+  if (theme2) {
+    theme2.addEventListener("click", () => {
+      document.body.className = "theme-green"
+    })
+  }
+
+  if (theme3) {
+    theme3.addEventListener("click", () => {
+      document.body.className = "theme-purple"
+    })
+  }
+
+  // ===== SCROLL SUAVE =====
+  const links = document.querySelectorAll('nav a[href^="#"]')
+
+  links.forEach((link) => {
+    link.addEventListener("click", function (e) {
+      e.preventDefault()
+      const target = document.querySelector(this.getAttribute("href"))
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth" })
+      }
+    })
+  })
+
+  // ===== BOTÃO VOLTAR AO TOPO =====
+  const backToTopBtn = document.getElementById("backToTop")
+
+  if (backToTopBtn) {
+    window.addEventListener("scroll", () => {
+      if (window.pageYOffset > 300) {
+        backToTopBtn.style.display = "inline-block"
+      } else {
+        backToTopBtn.style.display = "none"
+      }
+    })
+
+    backToTopBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" })
+    })
+  }
+
+  // ===== EFEITOS HOVER =====
+  const items = document.querySelectorAll(".item")
+
+  items.forEach((item) => {
+    item.addEventListener("mouseenter", function () {
+      this.style.transform = "translateY(-5px)"
+    })
+
+    item.addEventListener("mouseleave", function () {
+      this.style.transform = "translateY(0)"
+    })
+  })
+
+  console.log("Todos os scripts carregados!")
+})
+
