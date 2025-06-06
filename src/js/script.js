@@ -134,3 +134,66 @@ document.addEventListener("DOMContentLoaded", () => {
   } else {
     console.error("Botão verificar não encontrado!")
   }
+
+  // ===== VALIDAÇÃO DE FORMULÁRIO =====
+  const form = document.getElementById("contactForm")
+
+  if (form) {
+    function validateField(fieldId, errorId, validationFn, errorMessage) {
+      const field = document.getElementById(fieldId)
+      const errorElement = document.getElementById(errorId)
+
+      if (!field || !errorElement) return true
+
+      if (!validationFn(field.value)) {
+        errorElement.textContent = errorMessage
+        field.style.borderColor = "#e74c3c"
+        return false
+      } else {
+        errorElement.textContent = ""
+        field.style.borderColor = "#27ae60"
+        return true
+      }
+    }
+
+    function validateEmail(email) {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+      return emailRegex.test(email)
+    }
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault()
+
+      let isValid = true
+
+      // Validar nome
+      isValid &= validateField(
+        "name",
+        "nameError",
+        (value) => value.trim().length >= 2,
+        "Nome deve ter pelo menos 2 caracteres",
+      )
+
+      // Validar email
+      isValid &= validateField("email", "emailError", validateEmail, "Por favor, insira um email válido")
+
+      // Validar assunto
+      isValid &= validateField("subject", "subjectError", (value) => value !== "", "Por favor, selecione um assunto")
+
+      // Validar mensagem
+      isValid &= validateField(
+        "message",
+        "messageError",
+        (value) => value.trim().length >= 10,
+        "Mensagem deve ter pelo menos 10 caracteres",
+      )
+
+      if (isValid) {
+        alert("Formulário enviado com sucesso! Entraremos em contato em breve.")
+        form.reset()
+        // Resetar cores dos campos
+        const fields = form.querySelectorAll("input, select, textarea")
+        fields.forEach((field) => (field.style.borderColor = "#ddd"))
+      }
+    })
+  }
