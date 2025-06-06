@@ -246,3 +246,139 @@
               </label>
           </div>
       </div>
+
+      <!-- Pergunta 4 -->
+      <div class="quiz-question">
+          <h3>4. O que acontece quando a água atinge o nível mínimo?</h3>
+          <div class="quiz-options">
+              <label class="quiz-option">
+                  <input type="radio" name="q4" value="0">
+                  Nada
+              </label>
+              <label class="quiz-option">
+                  <input type="radio" name="q4" value="1">
+                  Alerta é enviado
+              </label>
+              <label class="quiz-option">
+                  <input type="radio" name="q4" value="2">
+                  Canal se abre
+              </label>
+              <label class="quiz-option">
+                  <input type="radio" name="q4" value="3">
+                  Sistema desliga
+              </label>
+          </div>
+      </div>
+
+      <!-- Pergunta 5 -->
+      <div class="quiz-question">
+          <h3>5. Qual é a função dos trituradores no sistema?</h3>
+          <div class="quiz-options">
+              <label class="quiz-option">
+                  <input type="radio" name="q5" value="0">
+                  Filtrar água
+              </label>
+              <label class="quiz-option">
+                  <input type="radio" name="q5" value="1">
+                  Triturar dejetos sólidos
+              </label>
+              <label class="quiz-option">
+                  <input type="radio" name="q5" value="2">
+                  Bombear água
+              </label>
+              <label class="quiz-option">
+                  <input type="radio" name="q5" value="3">
+                  Medir temperatura
+              </label>
+          </div>
+      </div>
+      
+      <!-- Botão Verificar -->
+      <div class="quiz-verify">
+          <button id="verifyQuiz" class="btn-verify">Verificar Respostas</button>
+      </div>
+      <!-- Respostas Corretas -->
+      <div id="correctAnswersSection" class="correct-answers-section" style="display: none;">
+          <h3>📋 Respostas Corretas:</h3>
+          <div class="answers-list">
+              <div class="answer-item">
+                  <strong>1. Qual é a principal causa de enchentes urbanas mencionada no projeto?</strong>
+                  <p class="correct-answer">✅ Entupimento de bueiros</p>
+              </div>
+              <div class="answer-item">
+                  <strong>2. Quantos municípios brasileiros são suscetíveis a enchentes?</strong>
+                  <p class="correct-answer">✅ 1942</p>
+              </div>
+              <div class="answer-item">
+                  <strong>3. Qual tecnologia é usada para detectar o nível da água?</strong>
+                  <p class="correct-answer">✅ Sensores</p>
+              </div>
+              <div class="answer-item">
+                  <strong>4. O que acontece quando a água atinge o nível mínimo?</strong>
+                  <p class="correct-answer">✅ Canal se abre</p>
+              </div>
+              <div class="answer-item">
+                  <strong>5. Qual é a função dos trituradores no sistema?</strong>
+                  <p class="correct-answer">✅ Triturar dejetos sólidos</p>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
+  <!-- Formulário de Contato -->
+  <section id="contato" class="bg-gray">
+      <div class="container">
+          <h2>Entre em Contato</h2>
+          <form id="contactForm">
+              <div class="form-group">
+                  <label for="name">Nome Completo *</label>
+                  <input type="text" id="name" name="name" required>
+                  <span class="error-message" id="nameError"></span>
+              </div>
+              
+              <div class="form-group">
+                  <label for="email">E-mail *</label>
+                  <input type="email" id="email" name="email" required>
+                  <span class="error-message" id="emailError"></span>
+              </div>
+              
+              <div class="form-group">
+                  <label for="phone">Telefone</label>
+                  <input type="tel" id="phone" name="phone">
+              </div>
+              
+              <div class="form-group">
+                  <label for="subject">Assunto *</label>
+                  <select id="subject" name="subject" required>
+                      <option value="">Selecione um assunto</option>
+                      <option value="informacoes">Informações sobre o projeto</option>
+                      <option value="parceria">Proposta de parceria</option>
+                      <option value="investimento">Oportunidade de investimento</option>
+                      <option value="outros">Outros</option>
+                  </select>
+                  <span class="error-message" id="subjectError"></span>
+              </div>
+              
+              <div class="form-group">
+                  <label for="message">Mensagem *</label>
+                  <textarea id="message" name="message" rows="5" required></textarea>
+                  <span class="error-message" id="messageError"></span>
+              </div>
+              
+              <button type="submit">Enviar Mensagem</button>
+          </form>
+      </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+      <div class="container">
+          <p>&copy; 2024 FlowGuard - Bueiros Inteligentes</p>
+          <button id="backToTop">Voltar ao Topo</button>
+      </div>
+  </footer>
+
+  <script src="src/js/script.js"></script>
+</body>
+</html>
